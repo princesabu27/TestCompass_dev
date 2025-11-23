@@ -8,7 +8,31 @@
   </head>
 
   <body>
-    <div class="app-container">
+    <div id="loginPage" class="content login-card" style="display: none">
+      <h1>Welcome Back!</h1>
+      <form id="loginForm">
+        <label for="username">Username / Email</label>
+        <input type="text" id="username" required placeholder="testuser" />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          placeholder="password123"
+        />
+
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginMsg" class="msg"></div>
+    </div>
+
+    <div class="app-container" id="mainApp">
+      <header class="app-header">
+        <h1 class="app-title">Compass-Dev</h1>
+        <button class="logout-btn" onclick="logout()">Logout 🚪</button>
+      </header>
+
       <div class="tabs">
         <div class="tab active" onclick="switchTab('expenseTab', event)">
           ➕ Add Expense
@@ -39,6 +63,7 @@
               <select id="currency">
                 <option value="OMR">OMR</option>
                 <option value="INR">INR</option>
+                <option value="USD">USD</option>
               </select>
             </div>
 
