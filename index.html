@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💰 Compass-Dev</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('expenseTab', event)">
+          ➕ Add Expense
+        </div>
+        <div class="tab" onclick="switchTab('balanceTab', event)">
+          💳 Account Balance
+        </div>
+      </div>
+
+      <div id="expenseTab" class="content">
+        <h2>Add New Expense</h2>
+
+        <form id="expenseForm">
+          <div class="form-grid">
+            <div>
+              <label for="amount">Amount</label>
+              <input
+                type="number"
+                id="amount"
+                step="0.01"
+                required
+                placeholder="e.g., 50.00"
+              />
+            </div>
+
+            <div>
+              <label for="currency">Currency</label>
+              <select id="currency">
+                <option value="OMR">OMR</option>
+                <option value="INR">INR</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="category">Category</label>
+              <select id="category" required></select>
+            </div>
+
+            <div>
+              <label for="account">Account</label>
+              <select id="account" required></select>
+            </div>
+
+            <div class="form-full">
+              <label for="transaction_date">Transaction Date</label>
+              <input type="date" id="transaction_date" required />
+            </div>
+
+            <div class="form-full">
+              <label for="expense_name">Expense Name</label>
+              <input
+                type="text"
+                id="expense_name"
+                required
+                placeholder="e.g., Groceries from Lulu"
+              />
+            </div>
+
+            <div class="form-full">
+              <label for="description">Description (Optional)</label>
+              <textarea
+                id="description"
+                rows="3"
+                placeholder="Brief details about the expense..."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit">Submit Expense</button>
+        </form>
+
+        <div id="msg" class="msg"></div>
+      </div>
+
+      <div id="balanceTab" class="content" style="display: none">
+        <h2>🏦 Account Balances</h2>
+
+        <div id="accountsContainer"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
