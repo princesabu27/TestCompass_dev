@@ -1,4 +1,4 @@
-  /* CSS Variables for easy theme changes */
+/* CSS Variables for easy theme changes */
       :root {
         --primary-color: #4f46e5; /* Indigo */
         --primary-hover: #4338ca;
@@ -20,18 +20,65 @@
         background: var(--background-color);
         color: var(--text-color);
         margin: 0;
-        padding: 20px 10px; /* Reduced side padding for small screens */
+        padding: 20px 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        min-height: 100vh; /* Added for centering login/main app */
+        justify-content: center; /* Added for centering login/main app */
       }
 
       /* --- Main Layout Container --- */
       .app-container {
         width: 100%;
-        max-width: 768px; /* Increased max-width for modern feel */
+        max-width: 768px;
         margin: 0 auto;
       }
+
+      /* --- Header and Logout Button --- */
+      .app-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        padding: 0 5px;
+      }
+      .app-title {
+        font-size: 1.8em;
+        color: var(--primary-color);
+        font-weight: 800;
+        margin: 0;
+      }
+      .logout-btn {
+        padding: 8px 15px;
+        background: #ef4444; /* Red color for contrast */
+        color: white;
+        border: none;
+        border-radius: var(--radius-default);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        width: auto; /* Override general button style */
+        margin: 0;
+      }
+      .logout-btn:hover {
+        background: #dc2626;
+      }
+      
+      /* --- Login Card Specific Styling --- */
+      .login-card {
+        max-width: 400px;
+        text-align: center;
+        margin-top: -10vh; /* Pull up a bit for visual center */
+      }
+      .login-card input {
+          margin-bottom: 15px;
+      }
+      .login-card label {
+          text-align: left;
+      }
+
 
       /* --- Tabs Styling --- */
       .tabs {
@@ -46,7 +93,7 @@
         cursor: pointer;
         background: var(--card-background);
         border: 2px solid var(--border-color);
-        border-radius: 50px; /* Pill shape for modern look */
+        border-radius: 50px;
         font-weight: 600;
         color: #6b7280;
         transition: all 0.2s ease-in-out;
@@ -97,7 +144,7 @@
         border: 1px solid var(--border-color);
         border-radius: var(--radius-default);
         font-size: 16px;
-        box-sizing: border-box; /* Important for padding/width calculation */
+        box-sizing: border-box;
         transition: border-color 0.2s;
       }
 
@@ -116,7 +163,7 @@
         gap: 20px;
       }
       .form-full {
-        grid-column: 1 / -1; /* Spans full width */
+        grid-column: 1 / -1;
       }
 
       button {
@@ -163,7 +210,7 @@
       }
       .account-card {
         padding: 18px;
-        background: #f9fafb; /* Lighter than card-background */
+        background: #f9fafb;
         border-radius: var(--radius-default);
         border-left: 5px solid var(--primary-color);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -184,19 +231,23 @@
       .account-balance {
         font-size: 1.2em;
         font-weight: 700;
-        color: #10b981; /* Green for positive balance */
+        color: #10b981;
         text-align: right;
       }
 
       /* --- Responsiveness: Mobile first approach --- */
       @media (max-width: 600px) {
         .form-grid {
-          grid-template-columns: 1fr; /* Stack columns on smaller screens */
+          grid-template-columns: 1fr;
         }
         .content {
           padding: 20px 15px;
         }
         .tabs {
-          flex-wrap: wrap; /* Allow tabs to wrap if screen is very small */
+          flex-wrap: wrap;
+        }
+        .app-header {
+            flex-direction: column;
+            gap: 10px;
         }
       }
